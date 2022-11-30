@@ -17,7 +17,7 @@ vector<vector<int>> solve(double longitude, double latitude, vector<vector<doubl
         y = add[i][1] - latitude;
         z = x/sqrt(x*x + y*y);
         angle = acosf(z);
-        if(address[i][0] < longitude){
+        if(add[i][0] < longitude){
             angle *= -1;
         }
         s.insert({angle,add[i][0],add[i][1],sqrt(x*x + y*y), i+1});
