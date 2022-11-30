@@ -20,7 +20,7 @@ vector<vector<int>> solve(double longitude, double latitude, vector<vector<doubl
         if(add[i][0] < longitude){
             angle *= -1;
         }
-        s.insert({angle,add[i][0],add[i][1],sqrt(x*x + y*y), i+1});
+        s.insert({angle,add[i][0],add[i][1],sqrt(x*x + y*y), (double)i+1});
     }
 
     // each address is kept int sorted order on the basis on angles achieved by using the
@@ -57,7 +57,7 @@ vector<vector<int>> solve(double longitude, double latitude, vector<vector<doubl
                 double x = sorted_cords[k][0];
                 double y = sorted_cords[k][1];
                 double dist = sorted_cords[k][2];
-                
+                double temp = dist;
                 if(2*dist > mid){ // comparing dtstance/time taken by a delievry boy to max time assumed
                     cnt = 11;
                     break;
